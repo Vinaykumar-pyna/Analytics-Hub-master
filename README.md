@@ -1,1 +1,1 @@
-# Analytics-Hub-master
+# Analytics-Hub

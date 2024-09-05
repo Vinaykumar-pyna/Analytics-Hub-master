@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+.dashboard {
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(-45deg, #538df7, #f87e62, #eed34a, #88e9b9);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+h1 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters input {
+    margin-right: auto;
+}
+.chart {
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    /*animation: pulseAnimation 2s ease-in-out infinite;*/
+}
+
+.error-message {
+    color: red;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-left-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.chart:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    height: 10px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
+}
+
+.chart:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    height: 10px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
+}
+@media (max-width: 600px) {
+    .chart-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .chart {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
